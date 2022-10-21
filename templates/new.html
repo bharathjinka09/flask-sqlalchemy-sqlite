@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+   </head>
+   <body class="container">
+      <h3>Students - Flask SQLAlchemy example</h3>
+      <hr/>
+      
+      {%- for category, message in get_flashed_messages(with_categories = true) %}
+         <div class = "alert alert-danger">
+            {{ message }}
+         </div>
+      {%- endfor %}
+      
+      <form action = "{{ request.path }}" method = "post">
+         <label for = "name">Name</label><br>
+         <input class="form-control" type = "text" name = "name" placeholder = "Name" required /><br>
+         
+         <label for = "city">City</label><br>
+         <input class="form-control" type = "text" name = "city" placeholder = "city" required /><br>
+         
+         <label for = "addr">Address</label><br>
+         <textarea class="form-control" name = "addr" placeholder = "address" required></textarea><br>
+         
+         <label for = "pin">Pincode</label><br>
+         <input class="form-control" type = "text" name = "pin" placeholder = "pincode" required /><br>
+         
+         <input class="btn btn-primary" type = "submit" value = "Submit" />
+      </form>
+   </body>
+</html>
